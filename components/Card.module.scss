@@ -1,6 +1,47 @@
+@keyframes slide-left {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slide-right {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
 .card {
-  width: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: space-around;
+  min-height: 100vh;
+  width: 600px;
+
+  article {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 50%;
+  }
+
+  img {
+    width: 300px;
+    height: 600px;
+  }
+}
+
+.slideLeft {
+  animation-name: slide-left;
+  animation-duration: 1s;
+}
+
+.slideRight {
+  animation-name: slide-right;
+  animation-duration: 1s;
 }

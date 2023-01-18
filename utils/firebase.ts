@@ -1,6 +1,5 @@
-import { db, storage } from "@/firebaseConfig";
-import { collection, doc, getDoc, getDocs } from "firebase/firestore";
-import { getDownloadURL, ref } from "firebase/storage";
+import { db } from "@/firebaseConfig";
+import { collection, getDocs } from "firebase/firestore";
 import { CardType } from "./types";
 
 export const fetchCards = async () => {

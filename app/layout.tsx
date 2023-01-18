@@ -1,18 +1,16 @@
-import './globals.css'
+import "./globals.scss";
+import { ReactNode } from "react";
+import Navbar from "@/components/Navbar";
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+type RootLayoutProps = { children: ReactNode };
+export default ({ children }: RootLayoutProps) => {
   return (
-    <html lang="en">
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
+    <html lang="en" className="scroll-smooth">
       <head />
-      <body>{children}</body>
+      <body id="top">
+        <Navbar />
+        {children}
+      </body>
     </html>
-  )
-}
+  );
+};

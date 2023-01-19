@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
 import { useInView } from "react-intersection-observer";
+import { WindowMockUp } from "./WindowMockup";
 
 type ArticleProps = { card: CardType };
 const Article: FC<ArticleProps> = ({ card: { title, description, technologies } }) => {
@@ -24,28 +25,36 @@ const Article: FC<ArticleProps> = ({ card: { title, description, technologies } 
 
 type Props = { card: CardType; i: number };
 export default ({ card, i }: Props) => {
-  const { ref, inView } = useInView({});
-  const { title, imgUrl } = card;
+  const { ref, inView } = useInView({
+    threshold: 0,
+    delay: 100,
+    triggerOnce: false,
+    fallbackInView: true,
+  });
+
+  const {
+    title,
+    img: { src, width, height },
+    url,
+  } = card;
 
   return (
     <Link
       ref={ref}
       className={
-        inView ? [styles.card, i % 2 ? styles.slideLeft : styles.slideRight].join(" ") : styles.card
+        inView
+          ? [styles.card, i % 2 ? styles.slideRight : styles.slideLeft].join(" ")
+          : [styles.card, styles.hidden].join(" ")
       }
       href={`projects/${title.toLowerCase()}`}
     >
-      {i % 2 ? (
-        <>
-          <Image src={imgUrl} alt={title} width={800} height={1446} />
-          <Article card={card} />
-        </>
+      {i % 2 === 0 && <Article card={card} />}
+      {url ? (
+        <WindowMockUp url={url} />
       ) : (
-        <>
-          <Article card={card} />
-          <Image src={imgUrl} alt={title} width={800} height={1446} />
-        </>
+        <Image src={src} alt={title} width={width} height={height} />
       )}
+      {i % 2 === 1 && <Article card={card} />}
     </Link>
   );
 };

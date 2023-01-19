@@ -5,10 +5,16 @@
   top: 0;
   background-color: #111;
   width: 100vw;
-  padding: 10px 100px;
+  padding: 15px 200px;
+  z-index: 1;
 
   a {
+    width: 300px;
     padding: 10px 15px;
     margin-right: 10px;
+
+    &:hover {
+      font-weight: bold;
+    }
   }
 }

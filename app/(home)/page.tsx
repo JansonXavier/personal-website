@@ -1,14 +1,16 @@
 import styles from "./page.module.scss";
-import About from "./About";
-import Projects from "./Projects";
+import About from "./About/About";
+import Projects from "./Projects/Projects";
+import Skills from "./Skills/Skills";
+import Contact from "./Contact/Contact";
 
 export default () => {
   return (
     <main className={styles.main}>
       <About />
       <Projects />
-      <section id="skills">Skills</section>
-      <section id="contact">Contact</section>
+      <Skills />
+      <Contact />
     </main>
   );
 };

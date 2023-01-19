@@ -1,9 +1,10 @@
+import styles from "./About.module.scss";
 import Image from "next/image";
 import MeImg from "../../../public/me.jpg";
 
 export default () => {
   return (
-    <section id="about" className={"about"}>
+    <section id="about" className={styles.about}>
       <article>
         <h1>Hi, I'm Janson</h1>
         <p>

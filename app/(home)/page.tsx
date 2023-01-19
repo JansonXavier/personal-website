@@ -8,7 +8,7 @@ export default () => {
   return (
     <main className={styles.main}>
       <About />
-      {/* <Projects /> */}
+      <Projects />
       <Skills />
       <Contact />
     </main>

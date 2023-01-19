@@ -7,7 +7,7 @@ export default ({ children }: RootLayoutProps) => {
   return (
     <html lang="en" className="scroll-smooth">
       <head />
-      <body id="top">
+      <body id="top" className="bg-grey-900 flex flex-col items-center text-center text-white">
         <Navbar />
         {children}
       </body>

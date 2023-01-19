@@ -4,5 +4,10 @@ export type CardType = {
   title: string;
   description: string;
   technologies: string[];
-  imgUrl: StaticImageData;
+  img: {
+    src: StaticImageData;
+    width: number;
+    height: number;
+  };
+  url?: string;
 };

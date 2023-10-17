@@ -1,6 +1,5 @@
 import styles from "./About.module.scss";
 import Image from "next/image";
-import MeImg from "../../../public/me.jpg";
 
 export default () => {
   return (
@@ -14,7 +13,7 @@ export default () => {
           section, it should style itself quite nicely without any further intervention from me!
         </p>
       </article>
-      <Image src={MeImg} alt="Janson Xavier" width={2316} height={3088} />
+      <Image src={"/me.jpg"} alt="Janson Xavier" width={2316} height={3088} />
     </section>
   );
 };
